@@ -1,0 +1,47 @@
+package shivam.practice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class App {
+  public static void main(String[] args) {
+   // System.out.println("Hello World!");
+  System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+
+  WebDriver driver = new ChromeDriver();
+driver.get("https://www.google.com/");
+driver.get("https://www.magicbricks.com/homeloan/home");
+//driver.findElement(By.linkText("mb-header__main__dropdown mb-login js-menu-drop swiper-created"));
+WebElement Login=driver.findElement(By.linkText("mb-header__main__dropdown mb-login js-menu-drop swiper-created"));
+//Login.click();
+//Instantiating Actions class
+//Actions actions = new Actions(driver);
+//WebElement element = driver.findElement(By.linkText("mb-header__main__link js-menu-link active"));
+//Hovering on login
+//actions.moveToElement(Login).build().perform();
+//WebDriverWait wait = new webDriverwait(driver, Duration.ofseconds(5));
+//wait.until(ExpectedCondition.visibilityOfElementLocated(By.linkText("mb-login__drop-cta")))
+//WebElement element2 = driver.findElement(By.linkText(mb-login__drop-cta);
+//Locating the Main Menu (Parent element)
+WebElement mainMenu = driver.findElement(By.xpath("mb-header__main__dropdown mb-login js-menu-drop swiper-created"));
+
+//Instantiating Actions class
+Actions actions = new Actions(driver);
+
+//Hovering on Login 
+//actions.moveToElement((WebElement) By.className("mb-header__main__link js-menu-link active")).perform();
+actions.moveToElement((mainMenu));
+//Locating the element from sub Menu
+WebElement subMenu = driver.findElement(By.xpath("mb-login__drop-cta"));
+
+//To mouseover on sub menu
+actions.moveToElement(subMenu);
+
+//build()- used to compile all the actions into a single step 
+actions.click().build().perform();
+  }
+}

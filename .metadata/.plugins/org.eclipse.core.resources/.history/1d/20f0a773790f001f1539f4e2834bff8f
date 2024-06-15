@@ -1,0 +1,14 @@
+
+public class method {
+
+	public static void main(String[] args) {
+		int r=Sum(10,20);
+
+	}
+
+	private static int Sum(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

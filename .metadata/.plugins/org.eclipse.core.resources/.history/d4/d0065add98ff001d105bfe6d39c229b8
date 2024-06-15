@@ -1,0 +1,16 @@
+package mb_HomeLoan;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+public class Loginpage1 {
+
+	WebDriver driver ;public loginPage
+	
+	
+	@Test
+	public void login()
+	{
+		
+	}
+}

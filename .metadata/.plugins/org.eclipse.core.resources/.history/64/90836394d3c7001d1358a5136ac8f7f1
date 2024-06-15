@@ -1,0 +1,71 @@
+package practice1;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class shivam {
+
+	public shivam() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Shivam.Sharma\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			WebDriverWait wait=new WebDriverWait(driver, 10);
+			//JavascriptExecutor executor = (JavascriptExecutor) driver;
+		    //Object element1 = executor;
+			//executor.executeScript("arguments[0].scrollIntoView(true);", element1);
+			driver.get("https://www.google.com/");
+			driver.manage().deleteAllCookies();
+			driver.get("https://www.easemytrip.com/");
+			driver.manage().window().maximize();
+			driver.findElement(By.xpath("//li[@id=\"rtrip\"]")).click();
+			driver.findElement(By.xpath("//input[@id='FromSector_show']")).click();
+			driver.findElement(By.xpath("//input[@id='a_FromSector_show']")).sendKeys("new");
+			driver.findElement(By.xpath("//span[@id='spnNew Delhi'] ")).click();
+			driver.findElement(By.xpath("//input[@id='Editbox13_show'] ")).click();
+			driver.findElement(By.xpath("//input[@id='a_Editbox13_show']")).sendKeys("Ahmedabad");
+			driver.findElement(By.xpath("//span[@id='spnAhmedabad']")).click();
+			driver.findElement(By.xpath("//input[@id='ddate']")).click();
+			driver.findElement(By.xpath("//li[@id='fiv_0_23/04/2023']")).click();
+			driver.findElement(By.xpath("//input[@id='rdate']")).click();
+			driver.findElement(By.xpath("//li[@id='snd_1_08/05/2023']")).click();
+			driver.findElement(By.xpath("//i[@id='iDownArr']")).click();
+			for(int i=1;i<4;i++)
+			{
+				driver.findElement(By.id("add")).click();
+			}
+			for(int i=1;i<=2;i++)
+			{
+			driver.findElement(By.xpath("(//button[@class='add plus_boxChd'])[1]")).click();
+			}
+			for(int i=1;i<2;i++)
+			{
+				driver.findElement(By.xpath("(//button[@class='add plus_box1Inf'])[1]")).click();
+			}
+			for(int i=1;i>=2;i--)
+			{
+				driver.findElement(By.xpath("//button[@id='asub']")).click();
+			}
+			driver.findElement(By.xpath("//label[@id='lbpEconomy']")).click();
+			driver.findElement(By.xpath("(//label[@class='container_df'])[2]")).click();
+			driver.findElement(By.xpath("//button[@class='srchBtnSe']")).click();
+			WebElement slider = driver.findElement(By.xpath("//*[@id=\"slider-range\"]/span[2]"));
+			Actions action = new Actions(driver);
+			Thread.sleep(5000);
+			action.dragAndDropBy(slider, -50, 0).perform();
+			
+	}
+
+}

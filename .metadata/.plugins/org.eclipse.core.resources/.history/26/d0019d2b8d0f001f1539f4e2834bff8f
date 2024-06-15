@@ -1,0 +1,14 @@
+// array is am object in java which contain similar type of data in a continuous memory location
+public class array {
+
+	public static void main(String[] args) {
+		int a[]= {10,20,30,40,50};
+		for (int b : a);
+		{
+			String b = null;
+			System.out.println(b+ " ");
+		}
+
+	}
+
+}

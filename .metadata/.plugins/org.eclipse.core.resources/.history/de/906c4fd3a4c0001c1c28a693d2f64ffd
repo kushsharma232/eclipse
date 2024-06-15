@@ -1,0 +1,28 @@
+package shivam.practice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class App {
+  public static void main(String[] args) {
+   // System.out.println("Hello World!");
+  System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+
+  WebDriver driver = new ChromeDriver();
+driver.get("https://www.google.com/");
+driver.get("https://www.magicbricks.com/homeloan/home");
+driver.findElement(By.id("Login"));
+WebElement Login=driver.findElement(By.linkText("Login"));
+Login.click();
+WebElement ele = driver.findElement(By.xpath("<xpath>"));
+
+//Creating object of an Actions class
+Actions action = new Actions(driver);
+
+//Performing the mouse hover action on the target element.
+action.moveToElement(ele).perform();
+  }
+}

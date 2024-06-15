@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;break_continue&apos; to &apos;arthematica_operator_break_continue&apos;&#x0D;&#x0A;- Original project: &apos;LearnBasicJava&apos;&#x0D;&#x0A;- Original element: &apos;break_continue&apos;&#x0D;&#x0A;- Renamed element: &apos;arthematica_operator_break_continue&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;break_continue&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{break_continue.java[break_continue" matchStrategy="1" name="arthematica_operator_break_continue" qualified="false" references="true" similarDeclarations="false" stamp="1715269693712" textual="false" version="1.0"/>
+</session>

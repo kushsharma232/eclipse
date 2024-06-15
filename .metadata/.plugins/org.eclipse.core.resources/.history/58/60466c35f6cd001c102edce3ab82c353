@@ -1,0 +1,40 @@
+package shivam.practice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class App {
+  public static void main(String[] args) {
+   // System.out.println("Hello World!");
+  System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+
+  WebDriver driver = new ChromeDriver();
+driver.get("https://www.google.com/");
+driver.get("https://www.magicbricks.com/homeloan/home");
+
+WebElement mainMenu = driver.findElement(By.xpath("/html/body/header/section[1]/div/div[3]/a"));
+
+//Instantiating Actions class
+Actions actions = new Actions(driver);
+
+//Hovering on Login 
+//actions.moveToElement((WebElement) By.className("mb-header__main__link js-menu-link active")).perform();
+actions.moveToElement((mainMenu));
+//Locating the element from sub Menu
+WebElement subMenu = driver.findElement(By.xpath("/html/body/header/section[1]/div/div[3]/div/div[2]/a"));
+
+//To mouseover on sub menu
+actions.moveToElement(subMenu);
+
+//build()- used to compile all the actions into a single step 
+actions.click().build().perform();
+
+//String username = driver.findElements(null)
+WebElement emailOrMobile = driver.findElement(By.xpath("//*[@id=\"WebElement mainMenu = driver.findElement(By.xpath(\"]"));
+
+  }
+}

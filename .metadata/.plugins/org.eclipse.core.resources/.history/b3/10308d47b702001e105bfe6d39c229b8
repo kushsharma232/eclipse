@@ -1,0 +1,36 @@
+package mb_HomeLoan;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.Test;
+
+import com.google.inject.spi.Element;
+
+public class Loginpage1 {
+
+	WebDriver driver ;
+	
+	public Loginpage1(WebDriver driver)
+	{
+		this.driver=driver;	
+	}
+	
+	@FindBy(xpath="//input[@id='emailOrMobile']") WebElement username ;
+	//@FindAll(xpath="//input[@id='emailOrMobile") List username1 ;
+	@FindBy(xpath="//*[@id=\"password\"]") WebElement password ;
+	@FindBy(xpath="/html/body/header/section[1]/div/div[2]/div[2]/a") WebElement Login;
+	
+	@Test
+	public void login()
+	{
+	
+		username.sendKeys("kushsharma232@gmail.com");
+		Element.click();
+		password.sendKeys("time@1234");
+		Element2.click();
+	}
+}

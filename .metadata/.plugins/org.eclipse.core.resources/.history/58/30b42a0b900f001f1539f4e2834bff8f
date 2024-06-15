@@ -1,0 +1,25 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+// array is am object in java which contain similar type of data in a continuous memory location
+public class array {
+
+	public static void main(String[] args) {
+		//int a[]= {10,20,30,40,50};
+		int a[]=new int [5];
+		System.out.println("enter arry value");
+		Scanner s=new Scanner (System.in);
+		for (int i=0;i<5;i++)
+		{
+			a[i]=s.nextInt();
+		}
+		Arrays.sort(a);
+		System.out.println( "sorted narray element: \n");
+		for(int b : a)
+		{
+			System.out.println(b+" ");
+		}
+
+	}
+
+}

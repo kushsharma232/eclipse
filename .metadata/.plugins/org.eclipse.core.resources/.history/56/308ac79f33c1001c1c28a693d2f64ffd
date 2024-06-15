@@ -1,0 +1,29 @@
+package shivam.practice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class App {
+  public static void main(String[] args) {
+   // System.out.println("Hello World!");
+  System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+
+  WebDriver driver = new ChromeDriver();
+driver.get("https://www.google.com/");
+driver.get("https://www.magicbricks.com/homeloan/home");
+driver.findElement(By.id("mb-header__main__link js-menu-link"));
+WebElement Login=driver.findElement(By.linkText("mb-header__main__link js-menu-link"));
+Login.click();
+//Instantiating Actions class
+Actions actions = new Actions(driver);
+WebElement element = driver.findElement(By.linkText("mb-header__main__link js-menu-link"));
+//Hovering on login
+actions.moveToElement(Login).build().perform();
+WebDriverWait wait = new webDriverwait(driver, Duration.ofseconds(5));
+wait.until(ExpectedCondition.visibilityOfElementLocated(By.linkText("mb-login__drop-cta")));
+  }
+}

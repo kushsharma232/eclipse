@@ -1,0 +1,36 @@
+package practice1;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class shivam {
+
+	public shivam() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Shivam.Sharma\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			WebDriverWait wait=new WebDriverWait(driver, 10);
+			driver.get("https://www.google.com/");
+			driver.get("https://www.easemytrip.com/");
+			driver.findElement(By.xpath("//li[@id=\"rtrip\"]")).click();
+			driver.findElement(By.xpath("//li[@id=\"rtrip\"]")).sendKeys("new");
+			/*JavascriptExecutor executor = (JavascriptExecutor) driver;
+		    Object element1 = executor;
+			executor.executeScript("arguments[0].scrollIntoView(true);", element1);*/
+			driver.findElement(By.xpath("//span[@id='spnNew Delhi'] ")).click();
+			driver.findElement(By.xpath("//input[@id='Editbox13_show'] ")).click();
+			driver.findElement(By.xpath("//span[@id='spnAhmedabad']")).click();
+	}
+
+}
